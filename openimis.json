@@ -20,7 +20,7 @@
 	"modules": [
  {
             "name": "CoreModule",
-            "npm": "@openimis/fe-core@git+https://github.com/openimis/openimis-fe-core_js.git#main"
+            "npm": "@openimis/fe-core@git+https://github.com/openimis/openimis-fe-core_js.git#feature/sync_graphql"
         },
             {
             "name": "HomeModule",
@@ -32,7 +32,7 @@
         },
             {
             "name": "InsureeModule",
-            "npm": "@openimis/fe-insuree@git+https://github.com/openimis/openimis-fe-insuree_js.git#main"
+            "npm": "@openimis/fe-insuree@git+https://github.com/BLSQ/openimis-fe-insuree_js.git#impl/spimm"
         },
             {
             "name": "MedicalModule",
@@ -64,7 +64,7 @@
         },
             {
             "name": "ClaimModule",
-            "npm": "@openimis/fe-claim@git+https://github.com/openimis/openimis-fe-claim_js.git#main"
+            "npm": "@openimis/fe-claim@git+https://github.com/BLSQ/openimis-fe-claim_js.git#impl/spimm"
         },
             {
             "name": "ClaimBatchModule",
@@ -83,8 +83,8 @@
             "npm": "@openimis/fe-profile@git+https://github.com/openimis/openimis-fe-profile_js.git#main"
         },
             {
-            "name": "LanguageFrModule",
-            "npm": "@openimis/fe-language_fr@git+https://github.com/openimis/openimis-fe-language_fr_js.git#main"
+            "name": "LanguageMyModule",
+            "npm": "@openimis/fe-language_my@git+https://github.com/BLSQ/openimis-fe-language_my_js.git#main"
         },
             {
             "name": "CalculationModule",
