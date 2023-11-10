@@ -14,6 +14,7 @@ RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 # Testing the key
 # RUN ssh -vv -i /root/.ssh/blsq git@github.com
 RUN git config --global core.sshCommand 'ssh -i /root/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+RUN echo "Host github.com\n     IdentityFile /root/.ssh/blsq\n     IdentitiesOnly yes\n     StrictHostKeyChecking no\n     UserKnownHostsFile=/dev/null" >> /root/.ssh/config
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
