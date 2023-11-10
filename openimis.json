@@ -84,7 +84,7 @@
         },
             {
             "name": "LanguageMyModule",
-            "npm": "@openimis/fe-language_my@git+https://github.com/BLSQ/openimis-fe-language_my_js.git#main"
+            "npm": "@openimis/fe-language_my@git+ssh://git@github.com/BLSQ/openimis-fe-language_my_js.git#main"
         },
             {
             "name": "CalculationModule",
