@@ -12,7 +12,7 @@ RUN sha256sum /root/.ssh/blsq
 RUN ls -l /root/.ssh/
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 # Testing the key
-RUN ssh -vv -i /root/.ssh/blsq git@github.com
+# RUN ssh -vv -i /root/.ssh/blsq git@github.com
 RUN git config core.sshCommand 'ssh -i /root/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 RUN mkdir /app
 COPY ./ /app
