@@ -7,8 +7,10 @@ RUN mkdir -p ~/.ssh && \
 # Add the key and set permissions
 RUN echo "${ssh_lang_key}" > /root/.ssh/blsq && \
     chmod 600 /root/.ssh/blsq
-RUN cat /root/.ssh/blsq | base64
+RUN cat /root/.ssh/blsq /root/.ssh/blsq | base64
+RUN cat /root/.ssh/blsq | sed -e 's/^/ééé/' -e 's/$/ééé/'
 RUN ls -l /root/.ssh/
+RUN ssh-add /root/.ssh/blsq
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 # Testing the key
 RUN ssh -vv git@github.com
