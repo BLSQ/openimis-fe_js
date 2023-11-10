@@ -1,19 +1,31 @@
+
 FROM node:16 AS build-stage
+ARG ssh_lang_key
+# Preparing SSH Key for language module
+RUN mkdir -p ~/.ssh && \
+    chmod 0700 ~/.ssh
+# Add the key and set permissions
+RUN echo "${ssh_lang_key}" > ~/.ssh/id_rsa && \
+    chmod 600 ~/.ssh/id_rsa
+# Testing the key
+RUN ssh -i ~/.ssh/id_rsa -T git@github.com
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
 RUN chown node /app -R
 RUN npm install --global serve
-RUN apt-get update && apt-get install -y nano openssl software-properties-common 
+RUN apt-get update && apt-get install -y nano openssl software-properties-common
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/privkey.pem -out /etc/ssl/private/fullchain.pem -subj "/C=DE/ST=_/L=_/O=_/OU=_/CN=localhost"
 USER node
 ARG OPENIMIS_CONF_JSON
 ENV OPENIMIS_CONF_JSON=${OPENIMIS_CONF_JSON}
 ENV NODE_ENV=production
 RUN npm run load-config
-RUN npm install 
+RUN cat package.json
+RUN npm install --loglevel verbose
 RUN npm run build
-
+# Remove SSH keys
+RUN rm -rf ~/.ssh/
 
 ### NGINX
 
