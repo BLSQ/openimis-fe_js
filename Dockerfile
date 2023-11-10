@@ -29,7 +29,8 @@ RUN git config --global core.sshCommand 'ssh -i ~/.ssh/blsq -o UserKnownHostsFil
 RUN echo "Host github.com\n     IdentityFile ~/.ssh/blsq\n     IdentitiesOnly yes\n     StrictHostKeyChecking no\n     UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 RUN npm run load-config
 RUN cat package.json
-RUN npm install --loglevel verbose
+RUN npm install  # --loglevel verbose
+RUN ls -l node_modules node_modules/@openimis node_modules/@openimis/fe-language_my
 RUN npm run build
 # Remove SSH keys
 RUN rm -rf ~/.ssh/
