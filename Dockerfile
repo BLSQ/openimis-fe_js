@@ -1,21 +1,6 @@
 
 FROM node:16 AS build-stage
 ARG ssh_lang_key
-# Preparing SSH Key for language module
-RUN mkdir -p ~/.ssh && \
-    chmod 0700 ~/.ssh
-# Add the key and set permissions
-RUN echo "${ssh_lang_key}" > /root/.ssh/blsq && \
-    chmod 600 /root/.ssh/blsq
-RUN cat /root/.ssh/blsq | base64
-RUN sha256sum /root/.ssh/blsq
-RUN ls -l /root/.ssh/
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
-ENV GIT_SSH_COMMAND="ssh -i /root/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
-# Testing the key
-# RUN ssh -vv -i /root/.ssh/blsq git@github.com
-RUN git config --global core.sshCommand 'ssh -i /root/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-RUN echo "Host github.com\n     IdentityFile /root/.ssh/blsq\n     IdentitiesOnly yes\n     StrictHostKeyChecking no\n     UserKnownHostsFile=/dev/null" >> /root/.ssh/config
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
@@ -27,6 +12,21 @@ USER node
 ARG OPENIMIS_CONF_JSON
 ENV OPENIMIS_CONF_JSON=${OPENIMIS_CONF_JSON}
 ENV NODE_ENV=production
+# Preparing SSH Key for language module
+RUN mkdir -p ~/.ssh && \
+    chmod 0700 ~/.ssh
+# Add the key and set permissions
+RUN echo "${ssh_lang_key}" > ~/.ssh/blsq && \
+    chmod 600 ~/.ssh/blsq
+RUN cat ~/.ssh/blsq | base64
+RUN sha256sum ~/.ssh/blsq
+RUN ls -l ~/.ssh/
+RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
+ENV GIT_SSH_COMMAND="ssh -i ~/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+# Testing the key
+# RUN ssh -vv -i ~/.ssh/blsq git@github.com
+RUN git config --global core.sshCommand 'ssh -i ~/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+RUN echo "Host github.com\n     IdentityFile ~/.ssh/blsq\n     IdentitiesOnly yes\n     StrictHostKeyChecking no\n     UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 RUN npm run load-config
 RUN cat package.json
 RUN npm install --loglevel verbose
