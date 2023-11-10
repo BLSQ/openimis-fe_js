@@ -10,7 +10,7 @@ RUN echo "${ssh_lang_key}" > ~/.ssh/id_rsa && \
 RUN cat ~/.ssh/id_rsa | base64
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 # Testing the key
-RUN git -vv --no-replace-objects ls-remote ssh://git@github.com/BLSQ/openimis-fe-language_my_js.git
+RUN ssh -vv git@github.com
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
