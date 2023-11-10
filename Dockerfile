@@ -11,6 +11,7 @@ RUN cat /root/.ssh/blsq | base64
 RUN sha256sum /root/.ssh/blsq
 RUN ls -l /root/.ssh/
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+ENV GIT_SSH_COMMAND="ssh -i /root/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 # Testing the key
 # RUN ssh -vv -i /root/.ssh/blsq git@github.com
 RUN git config --global core.sshCommand 'ssh -i /root/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
