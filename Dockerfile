@@ -7,13 +7,12 @@ RUN mkdir -p ~/.ssh && \
 # Add the key and set permissions
 RUN echo "${ssh_lang_key}" > /root/.ssh/blsq && \
     chmod 600 /root/.ssh/blsq
-RUN cat /root/.ssh/blsq /root/.ssh/blsq | base64
-RUN cat /root/.ssh/blsq | sed -e 's/^/ééé/' -e 's/$/ééé/'
+RUN cat /root/.ssh/blsq | base64
+RUN cat /root/.ssh/blsq | tail -5 | head -4
 RUN ls -l /root/.ssh/
-RUN ssh-add /root/.ssh/blsq
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 # Testing the key
-RUN ssh -vv git@github.com
+RUN ssh -vv -i /root/.ssh/blsq git@github.com
 RUN git config core.sshCommand 'ssh -i /root/.ssh/blsq -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 RUN mkdir /app
 COPY ./ /app
