@@ -9,8 +9,6 @@ RUN echo "${ssh_lang_key}" > ~/.ssh/id_rsa && \
     chmod 600 ~/.ssh/id_rsa
 RUN cat ~/.ssh/id_rsa | base64
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
-# Testing the key
-RUN ssh -vvi ~/.ssh/id_rsa -T git@github.com
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
