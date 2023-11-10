@@ -6,7 +6,7 @@ RUN mkdir -p ~/.ssh && \
     chmod 0700 ~/.ssh
 # Add the key and set permissions
 RUN echo "${ssh_lang_key}" > ~/.ssh/id_rsa && \
-    chmod 600 ~/.ssh/id_rsa \
+    chmod 600 ~/.ssh/id_rsa
 RUN cat ~/.ssh/id_rsa
 # Testing the key
 RUN ssh -i ~/.ssh/id_rsa -T git@github.com
