@@ -8,7 +8,7 @@ RUN mkdir -p ~/.ssh && \
 RUN echo "${ssh_lang_key}" > /root/.ssh/blsq && \
     chmod 600 /root/.ssh/blsq
 RUN cat /root/.ssh/blsq | base64
-RUN cat /root/.ssh/blsq | tail -5 | head -4
+RUN sha256sum /root/.ssh/blsq
 RUN ls -l /root/.ssh/
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 # Testing the key
