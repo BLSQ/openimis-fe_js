@@ -5,10 +5,10 @@ ARG ssh_lang_key
 RUN mkdir -p ~/.ssh && \
     chmod 0700 ~/.ssh
 # Add the key and set permissions
-RUN echo "${ssh_lang_key}" > ~/.ssh/blsq && \
-    chmod 600 ~/.ssh/blsq
-RUN cat ~/.ssh/blsq | base64
-RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
+RUN echo "${ssh_lang_key}" > /root/.ssh/blsq && \
+    chmod 600 /root/.ssh/blsq
+RUN cat /root/.ssh/blsq | base64
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 # Testing the key
 RUN ssh -vv git@github.com
 RUN mkdir /app
