@@ -60,6 +60,34 @@ export function loadModules (cfg = {}) {
   stream.end();
 }
 
+/*
+"@openimis/fe-core@git+https://github.com/openimis/openimis-fe-core_js.git#develop"
+=> moduleName="@openimis/fe-core" and version="git+https://github.com/openimis/openimis-fe-core_js.git#develop"
+"@openimis/fe-language_my@git+ssh://git@github.com:BLSQ/openimis-fe-language_my_js.git#main"
+=> moduleName="@openimis/fe-language_my" and version="git+ssh://git@github.com:BLSQ/openimis-fe-language_my_js.git#main"
+"@openimis/fe-core@>=1.5.1"
+=> moduleName="@openimis/fe-core" and version=">=1.5.1"
+ */
+function splitModuleNameAndVersion(str) {
+    // Finding the index of the first '@' symbol
+    let firstAtIndex = str.indexOf('@');
+    // Finding the index of the second '@' symbol
+    let secondAtIndex = str.indexOf('@', firstAtIndex + 1);
+
+    let moduleName, version;
+    if (secondAtIndex !== -1) {
+        // If there is a second '@', split based on its position
+        moduleName = str.substring(0, secondAtIndex);
+        version = str.substring(secondAtIndex + 1);
+    } else {
+        // If there is no second '@', the entire string is the moduleName
+        moduleName = str;
+        version = '';
+    }
+
+    return { moduleName, version };
+}
+
 function main() {
   /*
   Load openIMIS configuration. Configuration is taken from args if provided or from the environment variable
@@ -86,17 +114,16 @@ function main() {
   const modules = [];
   for (const module of config.modules) {
     const { npm, name, logicalName } = module;
+    let ver = splitModuleNameAndVersion(npm);
     // Find version number
-    const moduleName = npm.substring(0, npm.lastIndexOf("@"));
-    if (npm.lastIndexOf("@") <= 0) {
-      throw new Error(`  Module ${moduleName} has no version set.`);
+    if (ver.version === '') {
+      throw new Error(`  Module ${npm} has no version set.`);
     }
-    const version = npm.substring(npm.lastIndexOf("@") + 1);
-    console.log(`  added "${moduleName}": ${version}`);
-    pkg.dependencies[moduleName] = version;
+    console.log(`  added "${ver.moduleName}": ${ver.version}`);
+    pkg.dependencies[ver.moduleName] = ver.version;
     modules.push({
-      moduleName,
-      version,
+      moduleName: ver.moduleName,
+      verison: ver.version,
       name,
       npm,
       logicalName: logicalName || npm.match(/([^/]*)\/([^@]*).*/)[2],
