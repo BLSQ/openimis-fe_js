@@ -31,6 +31,7 @@ RUN npm run load-config
 RUN cat package.json
 RUN npm install  # --loglevel verbose
 RUN ls -l node_modules node_modules/@openimis node_modules/@openimis/fe-language_my
+RUN cat node_modules/@openimis/fe-language_my/README.md
 RUN npm run build
 # Remove SSH keys
 RUN rm -rf ~/.ssh/
