@@ -1,18 +1,18 @@
 {
 	"locales": [
 		{
-			"languages": [
-				"en",
-				"en-GB"
-			],
-			"intl": "en-GB",
-			"fileNames": "en"
-		}
+            "languages": [
+                "en",
+                "en-gm"
+            ],
+            "intl": "en-gm",
+            "fileNames": "en-gm"
+        }
 	],
 	"modules": [
         {
             "name": "CoreModule",
-            "npm": "@openimis/fe-core@git+https://github.com/openimis/openimis-fe-core_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-core@git+https://github.com/BLSQ/openimis-fe-core_js.git#impl/gambia"
         },
             {
             "name": "HomeModule",
@@ -24,7 +24,7 @@
         },
             {
             "name": "InsureeModule",
-            "npm": "@openimis/fe-insuree@git+https://github.com/openimis/openimis-fe-insuree_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-insuree@git+https://github.com/BLSQ/openimis-fe-insuree_js.git#impl/gambia"
         },
             {
             "name": "MedicalModule",
@@ -56,7 +56,7 @@
         },
             {
             "name": "ClaimModule",
-            "npm": "@openimis/fe-claim@git+https://github.com/openimis/openimis-fe-claim_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-claim@git+https://github.com/BLSQ/openimis-fe-claim_js.git#impl/gambia"
         },
             {
             "name": "ClaimBatchModule",
@@ -64,7 +64,7 @@
         },
             {
             "name": "AdminModule",
-            "npm": "@openimis/fe-admin@git+https://github.com/openimis/openimis-fe-admin_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-admin@git+https://github.com/BLSQ/openimis-fe-admin_js.git#impl/gambia"
         },
             {
             "name": "ToolsModule",
@@ -89,6 +89,10 @@
             {
             "name": "ContractModule",
             "npm": "@openimis/fe-contract@git+https://github.com/openimis/openimis-fe-contract_js.git#release/23.04_with_fixes"
+        },
+            {
+            "name": "GrievanceModule",
+            "npm": "@openimis/fe-grievance@git+https://github.com/BLSQ/openimis-fe-grievance_js.git#impl/gambia"
         },
             {
             "name": "InvoiceModule",
