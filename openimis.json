@@ -108,7 +108,7 @@
         },
             {
             "name": "InsureeBatch",
-            "npm": "@openimis/fe-insuree_batch@git+https://github.com/openimis/openimis-fe-insuree_batch_js.git#main"
+            "npm": "@openimis/fe-insuree_batch@git+https://github.com/openimis/openimis-fe-insuree_batch_js.git#develop"
         }
 	]
 }
