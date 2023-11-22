@@ -2,19 +2,19 @@
 	"locales": [
 		{
 			"languages": [
-				"en",
-				"en-GB"
-			],
-			"intl": "en-GB",
-			"fileNames": "en"
-		},
-		{
-			"languages": [
 				"fr",
 				"fr-FR"
 			],
 			"intl": "fr-FR",
 			"fileNames": "fr"
+		},
+		{
+			"languages": [
+				"en",
+				"en-GB"
+			],
+			"intl": "en-GB",
+			"fileNames": "en"
 		}
 	],
 	"modules": [
@@ -84,7 +84,7 @@
         },
             {
             "name": "LanguageFrModule",
-            "npm": "@openimis/fe-language_fr@git+https://github.com/openimis/openimis-fe-language_fr_js.git#develop"
+            "npm": "@blsqne/fe-language_fr_ne@git+https://github.com/BLSQ/openimis-fe-language_fr_ne_js.git#develop"
         },
             {
             "name": "CalculationModule",
@@ -106,25 +106,9 @@
             "name": "InvoiceModule",
             "npm": "@openimis/fe-invoice@git+https://github.com/openimis/openimis-fe-invoice_js.git#develop"
         },
-        {
-          "name": "SocialProtectionModule",
-          "npm": "@openimis/fe-social_protection@git+https://github.com/openimis/openimis-fe-social_protection_js.git#develop"
-        },
-        {
-          "name": "TasksManagementModule",
-          "npm": "@openimis/fe-tasks_management@git+https://github.com/openimis/openimis-fe-tasks_management_js.git#develop"
-        },
-        {
-          "name": "OpenSearchReportsModule",
-          "npm": "@openimis/fe-opensearch_reports@git+https://github.com/openimis/openimis-fe-opensearch_reports_js.git#develop"
-        },
-        {
-          "name": "GrievanceModule",
-          "npm": "@openimis/fe-grievance@git+https://github.com/openimis/openimis-fe-grievance_js.git#develop"
-        },
-        {
-          "name": "PayrollModule",
-          "npm": "@openimis/fe-payroll@git+https://github.com/openimis/openimis-fe-payroll_js.git#develop"
+            {
+            "name": "InsureeBatch",
+            "npm": "@openimis/fe-insuree_batch@git+https://github.com/openimis/openimis-fe-insuree_batch_js.git#main"
         }
 	]
 }
