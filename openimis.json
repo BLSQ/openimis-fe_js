@@ -107,7 +107,7 @@
             "npm": "@openimis/fe-invoice@git+https://github.com/openimis/openimis-fe-invoice_js.git#develop"
         },
             {
-            "name": "InsureeBatch",
+            "name": "InsureeBatchModule",
             "npm": "@openimis/fe-insuree_batch@git+https://github.com/openimis/openimis-fe-insuree_batch_js.git#develop"
         }
 	]
