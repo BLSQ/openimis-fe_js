@@ -10,11 +10,11 @@
 		},
 		{
 			"languages": [
-				"fr",
-				"fr-FR"
+				"my",
+				"my-MM"
 			],
-			"intl": "fr-FR",
-			"fileNames": "fr"
+			"intl": "my-MM",
+			"fileNames": "my"
 		}
 	],
 	"modules": [
