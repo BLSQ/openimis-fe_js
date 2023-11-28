@@ -76,7 +76,7 @@
         },
             {
             "name": "ToolsModule",
-            "npm": "@openimis/fe-tools@git+https://github.com/openimis/openimis-fe-tools_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-tools@git+https://github.com/BLSQ/openimis-fe-tools_js.git#impl/spimm"
         },
             {
             "name": "ProfileModule",
