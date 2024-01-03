@@ -40,7 +40,7 @@
         },
             {
             "name": "PolicyModule",
-            "npm": "@openimis/fe-policy@git+https://github.com/openimis/openimis-fe-policy_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-policy@git+https://github.com/BLSQ/openimis-fe-policy_js.git#impl/gambia"
         },
             {
             "name": "PayerModule",
