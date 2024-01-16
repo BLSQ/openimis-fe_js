@@ -99,6 +99,10 @@
             "npm": "@openimis/fe-language_en_gmb@git+https://github.com/openimis/openimis-fe-language_en_gmb_js.git#develop"
         },
             {
+            "name": "EcrvsModule",
+            "npm": "@openimis/fe-ecrvs@git+https://github.com/BLSQ/openimis-fe-ecrvs.git#impl/gambia"
+        },
+            {
             "name": "InvoiceModule",
             "npm": "@openimis/fe-invoice@git+https://github.com/openimis/openimis-fe-invoice_js.git#release/23.04_with_fixes"
         }
