@@ -100,7 +100,7 @@
         },
             {
             "name": "EcrvsModule",
-            "npm": "@openimis/fe-ecrvs@git+https://github.com/BLSQ/openimis-fe-ecrvs.git#impl/gambia"
+            "npm": "@openimis/fe-ecrvs@git+ssh://git@github.com:BLSQ/openimis-fe-ecrvs.git#impl/gambia"
         },
             {
             "name": "InvoiceModule",
