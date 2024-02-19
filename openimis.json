@@ -96,7 +96,7 @@
         },
             {
             "name": "LanguageEnGmbModule",
-            "npm": "@openimis/fe-language_en_gmb@git+https://github.com/openimis/openimis-fe-language_en_gmb_js.git#develop"
+            "npm": "@openimis/fe-language_en_gmb@git+https://github.com/openimis/openimis-fe-language_en_gmb_js.git#impl/gambia"
         },
             {
             "name": "EcrvsModule",
