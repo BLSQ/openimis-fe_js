@@ -16,7 +16,8 @@ import { App, FatalError, baseApiUrl, apiHeaders } from "@openimis/fe-core";
 import messages_ref from "./translations/ref.json";
 import "./index.css";
 // import logo from "./openIMIS.png";
-import logo from "./nhis.jpg";
+// import logo from "./nhis.jpg";
+import logo from "./nhis-no-white.png";
 
 const loadConfiguration = async () => {
   const response = await fetch(`${baseApiUrl}/graphql`, {
