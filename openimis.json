@@ -103,6 +103,10 @@
             "npm": "@openimis/fe-ecrvs@git+ssh://git@github.com:BLSQ/openimis-fe-ecrvs_js.git#impl/gambia"
         },
             {
+            "name": "QmoneyPaymentModule",
+            "npm": "@openimis/fe-qmoney_payment@git+ssh://git@github.com:BLSQ/openimis-fe-qmoney_payment_js.git#impl/gambia"
+        },
+            {
             "name": "InvoiceModule",
             "npm": "@openimis/fe-invoice@git+https://github.com/openimis/openimis-fe-invoice_js.git#release/23.04_with_fixes"
         }
