@@ -48,7 +48,7 @@
         },
             {
             "name": "ContributionModule",
-            "npm": "@openimis/fe-contribution@git+https://github.com/openimis/openimis-fe-contribution_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-contribution@git+https://github.com/BLSQ/openimis-fe-contribution_js.git#impl/gambia"
         },
             {
             "name": "PaymentModule",
