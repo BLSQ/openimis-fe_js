@@ -16,7 +16,7 @@
         },
             {
             "name": "HomeModule",
-            "npm": "@openimis/fe-home@git+https://github.com/openimis/openimis-fe-home_js.git#release/23.04_with_fixes"
+            "npm": "@openimis/fe-home@git+https://github.com/BLSQ/openimis-fe-home_js.git#impl/gambia"
         },
             {
             "name": "LocationModule",
