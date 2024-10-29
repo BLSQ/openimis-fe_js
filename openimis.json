@@ -100,11 +100,11 @@
         },
             {
             "name": "EcrvsModule",
-            "npm": "@openimis/fe-ecrvs@git+ssh://git@github.com:BLSQ/openimis-fe-ecrvs_js.git#impl/gambia"
+            "npm": "@openimis/fe-ecrvs@git+https://github.com/BLSQ/openimis-fe-ecrvs_js.git#impl/gambia"
         },
             {
             "name": "QmoneyPaymentModule",
-            "npm": "@openimis/fe-qmoney_payment@git+ssh://git@github.com:BLSQ/openimis-fe-qmoney_payment_js.git#impl/gambia"
+            "npm": "@openimis/fe-qmoney_payment@git+https://github.com/BLSQ/openimis-fe-qmoney_payment_js.git#impl/gambia"
         },
             {
             "name": "InvoiceModule",
